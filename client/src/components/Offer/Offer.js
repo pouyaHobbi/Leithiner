@@ -40,7 +40,7 @@ const OfferList = styled.div`
 const renderOffers = () => {
 	return OFFERS.map((offer) => {
 		return (
-			<OfferList>
+			<OfferList key={offer.label}>
 				<H2> {offer.label} </H2>
 				<Text> {offer.text} </Text>
 			</OfferList>

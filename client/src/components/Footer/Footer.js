@@ -44,7 +44,7 @@ const ThirdListRoot = styled.div`
 const renderFirstCol = () => {
 	return FIRSTCOLUMN.map((text) => {
 		return (
-			<UL>
+			<UL key={text}>
 				<LI> {text} </LI>
 			</UL>
 		)

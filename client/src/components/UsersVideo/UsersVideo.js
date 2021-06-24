@@ -2,7 +2,7 @@ import React from 'react'
 import { useRouter } from 'next/router'
 
 import styled from 'styled-components'
-import { H1, H2 } from './../globalStyles/globalStyle'
+import { H1, H2, useStyles } from './../globalStyles/globalStyle'
 // Material
 import Typography from '@material-ui/core/Typography'
 import { makeStyles } from '@material-ui/core/styles'
@@ -19,22 +19,13 @@ const useStyle = makeStyles({
 		textAlign: 'center',
 		lineHeight: '1.9rem',
 	},
-	button: {
-		backgroundColor: '#23272b',
-		color: '#eaeaea',
-		margin: '3rem auto',
-		width: '30%',
-		display: 'flex',
-		'&:hover': {
-			color: '#fff',
-			backgroundColor: '#1d2124',
-		},
-	},
 })
 
 export const UsersVideo = () => {
 	const router = useRouter()
 	const classes = useStyle()
+	const globalStyles = useStyles()
+
 	const handleClick = () => {
 		router.push('/courses', null, { shallow: true })
 	}
@@ -77,7 +68,7 @@ export const UsersVideo = () => {
 			</Typography>
 			<Button
 				onClick={handleClick}
-				className={classes.button}
+				className={globalStyles.buttonPrimary}
 				variant='contained'
 			>
 				Online-Course

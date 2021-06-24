@@ -2,7 +2,7 @@ import React from 'react'
 import { useRouter } from 'next/router'
 
 import styled from 'styled-components'
-import { H1 } from './../globalStyles/globalStyle'
+import { H1, useStyles } from './../globalStyles/globalStyle'
 // Material
 import Typography from '@material-ui/core/Typography'
 import { makeStyles } from '@material-ui/core/styles'
@@ -24,22 +24,13 @@ const useStyle = makeStyles({
 		textAlign: 'center',
 		lineHeight: '1.9rem',
 	},
-	button: {
-		backgroundColor: '#23272b',
-		color: '#eaeaea',
-		margin: '3rem auto',
-		width: '30%',
-		display: 'flex',
-		'&:hover': {
-			color: '#fff',
-			backgroundColor: '#1d2124',
-		},
-	},
+
 })
 
 export const HowItWork = () => {
 	const router = useRouter()
 	const classes = useStyle()
+	const globalStyled = useStyles()
 
 	const handleClick = () => {
 		router.push('/login', null, { shallow: true })
@@ -83,7 +74,7 @@ export const HowItWork = () => {
 			</Typography>
 			<Button
 				onClick={handleClick}
-				className={classes.button}
+				className={globalStyled.buttonPrimary}
 				variant='contained'
 			>
 				Get start
